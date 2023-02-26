@@ -76,7 +76,12 @@ class StocksController extends Controller
      */
     public function show(string $id)
     {
-        //
+        try {
+            $stocks = Stock::where('id', $id)->get()->first();
+            return response()->json($stocks);
+        } catch (QueryException $e) {
+            return response()->json(['message' => 'Error retrieving stock data.'], 500);
+        }
     }
 
     /**

@@ -30,6 +30,7 @@ Route::get('/stok/edit/{id}',[StocksController::class,'edit']);
 Route::get('/stok/destroy/{id}',[StocksController::class,'destroy']);
 Route::get('/stok/create/',[StocksController::class,'create'])->name('stok.create');
 Route::post('/stok/store/',[StocksController::class,'store'])->name('stok.store');
+Route::get('/stok/show/{id}',[StocksController::class,'show'])->name('stok.show');
 
 
 //data stok
@@ -52,6 +53,10 @@ Route::post('/purchase/create/{id_nota}',[PurchaseController::class,'createPurch
 
 // data purchase
 Route::get('/purchase/data/{id_nota}',[PurchaseController::class,'getPurchaseData'])->name('purchase.data');
+
+// data stock name
+Route::get('/purchase/stock_name/data/{category}',[PurchaseController::class,'getStockNameData'])->name('stock.name.data');
+
 
 
 
